@@ -29,13 +29,15 @@ jossa opitaan Python perusteet ja ohjelmisto kehityksen työprosessin.
 | 9 | Jokaisen päivän tuntien kysely | `daily_hours` | Valmis |
 | 10 | Opiskelutuntien yhteenlasku | `total_hours += daily_hours` | Valmis |
 | 11 | Viikkotuntien näyttäminen | `print()` | Valmis |
-| 12 | Päivittäisen keskiarvon laskeminen | `average_hours` | Työn alla |
+| 12 | Päivittäisen keskiarvon laskeminen | `average_hours` | Valmis |
 
 
 
-    - ohjelma on keskeneräinen
-    - 11 toimintoa on toteutettu
-    - keskiarvolaskenta on vielä työn alla
+- Sovelluksen kehittäminen jatkuu.
+- 12 toimintoa on toteutettu.
+- Seuraavaksi kehitetään funktioita.
+- Syötteiden virheenkäsittely on suunniteltu.
+- Tietojen tallennus on suunniteltu.
 
 Nykyinen opiskelupäivän arviointi
 Päivittäiset tunnit	Palaute
