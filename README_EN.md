@@ -96,3 +96,6 @@ The program asks for a name, a programming language, today's study hours, and th
 ## Language
 
 This document is in English. The Finnish project documentation is available in [`README.md`](README.md).
+
+Note: The application currently displays feedback in Finnish.
+The English messages above are translations for documentation.
