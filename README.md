@@ -1,5 +1,7 @@
 # Python Study Manager
 
+[Suomi](README.md) | [English](README_EN.md)
+
 **Versio: v1.2 - keskeneräinen**
 
 ## Projektin tarkoitus
