@@ -26,16 +26,46 @@ else:
     print("Jatka harjoittelua!")
 
 total_hours = 0
+ 
+choice = input("Valintasi (1/2): ")
 
-for day in range(1, 8):
-    daily_hours = int(input(f"Kuinka monta tuntia opiskelit päivässä {day}? "))
+if choice  ==  "1":
 
-    print(f"Opiskelupäivä {day}: {daily_hours} tuntia")
+    for day in range(1, 8):
 
-    total_hours += daily_hours
+        daily_hours = int(input(f"Kuinka monta tuntia opiskelit päivässä {day}? "))
 
-print(f"Viikon opiskelutunnit yhteensä: {total_hours} tuntia  ")
+        print(f"Opiskelupäivä {day}: {daily_hours} tuntia")
 
-average_hours = total_hours / 7
+        total_hours += daily_hours
 
-print(f"Päivittäinen keskiarvo: {average_hours} tuntia")
+    average_hours = total_hours / 7
+
+    print(f"Viikon opiskelutunnit yhteensä: {total_hours} tuntia")
+
+    print(f"Päivittäinen keskiarvo: {average_hours:.2f} tuntia")
+
+elif  choice == "2":
+
+    day_count = 0
+
+    answer = "k"
+
+    while answer == "k":
+
+        daily_hours = int(input("Anna opiskelutunnit: "))
+
+        total_hours += daily_hours
+
+        day_count += 1
+
+        answer = input("Haluatko lisätä uuden päivän? (k/e): ")
+
+    average_hours = total_hours / day_count
+
+
+    print(f"Viikon opiskelutunnit yhteensä: {total_hours} tuntia  ")
+
+    print(f"Opiskelupäiviä: {day_count}")
+
+    print(f"Päivittäinen keskiarvo: {average_hours:.2f} tuntia")
