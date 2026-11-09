@@ -2,98 +2,136 @@
 
 [Suomi](README.md) | [English](README_EN.md)
 
-**Versio: v1.2 - keskeneräinen**
+**Kehitysvaihe:** v1.2 – seitsemän päivän ja joustavan seurannan toteutus testattu (10.11.2026).  
+**Tila:** aktiivinen oppimisprojekti; syötteiden validointi on seuraava kehityskohde.
 
 ## Projektin tarkoitus
 
-Python Study Manager on Python-projektini,
-josta kehitän täysimääräisen opiskeluhallinta sovelluksen (Study Management Application)
+Python Study Manager on Pythonilla toteutettava komentorivisovellus (CLI), jonka avulla harjoittelen ohjelmoinnin perusteita ja ohjelmistokehityksen työprosesseja. Sovellus seuraa ohjelmointikielten opiskelua, opiskelutunteja ja päivittäistä edistymistä. Myöhemmissä versioissa tavoitteena on lisätä tiedostotallennus, oppimistavoitteet ja raportointi.
 
-Sovelluksen tavoitteena on seurata ohjelmointi kielten opiskelua,
-käytettyjä opiskelutunteja,
-viikottaista edistymistä ja myöhemmin myös oppimistavoitteita.
-
-Kehitämme ohjelmaa vaiheittain,
-jossa opitaan Python perusteet ja ohjelmisto kehityksen työprosessin.
+Projektia kehitetään vaiheittain: opiskelen käsitteet, kirjoitan koodin itse, korjaan virheet, testaan toiminnallisuuden ja tallennan hyväksytyt muutokset Gitiin.
 
 ## Nykyiset ominaisuudet
 
-| Nro | Ominaisuudet | Toteutus | Tila |
+| Nro | Ominaisuus | Toteutus | Tila |
 |---|---|---|---|
-| 1 | Ohjelman käynnistys | `python study_manager.py` | Valmis |
-| 2 | Opiskelijan nimen kysyminen | `input()` | Valmis |
-| 3 | Ohjelmointikielen kysyminen | `input()` | Valmis |
-| 4 | Päivittäisen opiskelutuntimäärän kysyminen | `int(input())` | Valmis |
-| 5 | Viikoittaisen opiskelutuntimäärän ennuste | `study_hours * 7` | Valmis |
-| 6 | Opiskelutietojen tulostaminen | `print()`  f-merkkijonot | Valmis |
-| 7 | Opiskelupäivän arviointi | `if` `elif` `else` | Valmis |
-| 8 | Seitsemän opiskelupäivän käsittely | `for` `range()` | Valmis |
-| 9 | Jokaisen päivän tuntien kysely | `daily_hours` | Valmis |
-| 10 | Opiskelutuntien yhteenlasku | `total_hours += daily_hours` | Valmis |
-| 11 | Viikkotuntien näyttäminen | `print()` | Valmis |
-| 12 | Päivittäisen keskiarvon laskeminen | `average_hours` | Valmis |
+| 1 | Käynnistys komentoriviltä | `python study_manager.py` | Testattu |
+| 2 | Opiskelijan nimen kysyminen | `input()` | Testattu |
+| 3 | Ohjelmointikielen kysyminen | `input()` | Testattu |
+| 4 | Päivittäisen opiskelutuntimäärän kysyminen | `int(input())` | Testattu kelvollisella syötteellä |
+| 5 | Viikkotuntien arvio yhdestä päivästä | `study_hours * 7` | Testattu |
+| 6 | Opiskelijan tietojen näyttäminen | `print()`, f-merkkijonot | Testattu |
+| 7 | Opiskelupäivän palaute | `if`, `elif`, `else` | Testattu |
+| 8 | Seurantatilan valinta | `choice`, `if` ja `elif` | Testattu vaihtoehdoilla 1 ja 2 |
+| 9 | Kiinteä seitsemän päivän seuranta | `for`, `range(1, 8)` | Testattu |
+| 10 | Joustava opiskelupäivien kirjaaminen | `while` ja jatkamiskysymys `k/e` | Testattu |
+| 11 | Opiskelutuntien yhteenlasku | `total_hours += daily_hours` | Testattu |
+| 12 | Kirjattujen opiskelupäivien laskeminen | `day_count += 1` | Testattu |
+| 13 | Päivittäisen keskiarvon laskeminen | `total_hours / 7` tai `/ day_count` | Testattu |
+| 14 | Yhteenvetoraportti | `print()` | Testattu molemmissa tiloissa |
+| 15 | Keskiarvon muotoilu | `:.2f` | Testattu |
+| 16 | Versiohallinta | Git `status`, `add`, `commit`, `log` | Käytössä |
 
+### Opiskelupäivän palaute
 
+| Päivän opiskelutunnit | Palaute |
+|---|---|
+| 0–1 | Jatka harjoittelua! |
+| 2–3 | Hyvää edistymistä! |
+| 4 tai enemmän | Erinomainen opiskelupäivä! |
 
-- Sovelluksen kehittäminen jatkuu.
-- 12 toimintoa on toteutettu.
-- Seuraavaksi kehitetään funktioita.
-- Syötteiden virheenkäsittely on suunniteltu.
-- Tietojen tallennus on suunniteltu.
+Palaute perustuu ensimmäiseen päivän tuntikysymykseen. Samassa kohdassa esitettävä `study_hours * 7` on **ennuste**, ei myöhemmin kirjattujen päivien toteutunut tuntisumma.
 
-Nykyinen opiskelupäivän arviointi
-Päivittäiset tunnit	Palaute
-0–1	Jatka harjoittelua!
-2–3	Hyvää edistymistä!
-4 tai enemmän	Erinomainen opiskelupäivä!
+## Käyttö
 
-Toteutettu teknologia
-- Ohjelmointikieli: Python 3
-- Käyttöliittymä: komentorivi (CLI)
-- Kehitysympäristö: Fedora Linux KDE
-- Lähdekoodi: study_manager.py
-- Tietojen käsittely: muuttujat ja laskutoimitukset keskusmuistissa
-- Ohjausrakenteet: ehtolauseet ja for-silmukka
+Avaa projektikansio ja käynnistä ohjelma:
 
-Seuraavat kehitys kohteet:
-1. v1.2 viimeistely: keskiarvon laskeminen ja viikkoraportti
-2. v1.3: funktiot (def) ja ohjelman modulaarinen rakenne
-3. v1.4: virheellisten syötteiden käsittely (try, except)
-4. v2.0: opiskelu historian tallennus JSON- ja CSV-tiedostoihin
-5. v2.1: opiskelutavoitteet ja edistymisen seuranta
-6. v3.0:SQLite-tietokanta ja graafiset raportit
+```bash
+cd /mnt/projektit/github/python-study-manager
+python study_manager.py
+```
 
-Nykytila: 11 ominaisuutta toteutettu. Ohjelman testaus ja keskiarvolaskennan käyttöönotto ovat seuraavia kehitysvaiheita.
+Ohjelma kysyy ensin nimen, ohjelmointikielen ja tämän päivän opiskelutunnit. Sen jälkeen valitaan seurantatila:
 
-## Tulevat kehitysvaiheet
+- **1 – Seitsemän päivän seuranta:** kysyy seitsemän päivän tunnit, laskee summan ja päivän keskiarvon.
+- **2 – Joustava seuranta:** kysyy tunnit niin monelta päivältä kuin halutaan. Vastauksella `k` jatketaan ja `e` lopetetaan. Lopuksi tulostetaan summa, päiväkohtainen määrä ja keskiarvo.
 
-1. v1.0 - Opiskelutietojen kerääminen
-    - Opiskelijan nimi
-    - Ohjelmointi kieli
-    - Opiskelu tunnit
-    - Viikkotuntien arvio
+Tietoja ei vielä tallenneta pysyvästi: ne ovat käytettävissä vain ohjelman suorituksen ajan.
 
-2. v1.1 - Ehtolauseet
-    - if, elif ja else
-    - Ohjelma antaa palautetta opiskelu tunneista.
+## Testaus
 
-3.  v1.2.1 - Toistorakenteet
-    - for-silmukka ja range() käytössä
-    - Seitsemän opiskelupäivän tuntien seuranta
-    - Päivittäisen keskiarvon laskeminen työn alla
+### Kiinteä seuranta – PY-SM-19.5
 
-4. v1.2.2 - while-silmukka (suunniteltu)
-    - while-silmukan toimintaperiaate
-    - Silmukan lopetusehdon harjoittelu
-    - Käyttäjän syötteiden käsittely silmukassa
+Syötteet: `3, 4, 2, 5, 3, 4, 2`.
 
-5. v1.3 - Funktiot
-    - Ohjelman jakaminen uudelleen käyttäviin osiin def - rakenteella.
+```text
+Viikon opiskelutunnit yhteensä: 23 tuntia
+Päivittäinen keskiarvo: 3.29 tuntia
+```
 
-6. 2.0 - Tietojen tallentaminen
-    - Opiskelu tietojen tallentaminen json tai csv.
+**Tulos:** hyväksytty käyttäjän terminaalitulosteen perusteella.
 
-7. 3.0 - Tietokanta ja raportointi
-    - SQLite-tietokanta
-    - Opiskeluhistoria
-    - Edistymisen visuaalisointi
+### Joustava seuranta – PY-SM-19.6
+
+Syötteet: `2, 4, 6`; jatkovastaukset: `k, k, e`.
+
+```text
+Viikon opiskelutunnit yhteensä: 12 tuntia
+Opiskelupäiviä: 3
+Päivittäinen keskiarvo: 4.00 tuntia
+```
+
+**Tulos:** hyväksytty käyttäjän terminaalitulosteen perusteella.
+
+Syntaksin voi tarkistaa komennolla:
+
+```bash
+python -m py_compile study_manager.py
+```
+
+Testatut tapaukset kattavat normaalin käytön, mutta eivät vielä virheellisiä syötteitä tai kaikkia reunatapauksia.
+
+## Oppimislista
+
+Toteutetut harjoitukset ja seuraavat oppimistavoitteet on koottu tiedostoon [OPPIMISLISTA.md](OPPIMISLISTA.md).
+
+## Kehityssuunnitelma
+
+| Kehitysvaihe | Sisältö | Tila |
+|---|---|---|
+| v1.0 | Opiskelijan perustiedot ja opiskelutuntien ennuste | Toteutettu |
+| v1.1 | Ehtolauseet ja palaute | Toteutettu |
+| v1.2.1 | `for`-silmukka ja seitsemän päivän seuranta | Toteutettu ja testattu |
+| v1.2.2 | `while`-silmukan harjoittelu | Toteutettu |
+| v1.2.3 | Valikko sekä kiinteä ja joustava seuranta | Toteutettu ja testattu |
+| Seuraava | Syötteiden validointi: `try`, `except`, `ValueError` | Aloittamatta toteutuksessa |
+| Suunniteltu | Virheellisten valikkovalintojen käsittely | Suunniteltu |
+| Suunniteltu | Funktiot (`def`) ja koodin jäsentely | Suunniteltu |
+| Suunniteltu | Opiskeluhistorian tallentaminen JSON- tai CSV-tiedostoon | Suunniteltu |
+| Suunniteltu | Opiskelutavoitteet ja edistymisen seuranta | Suunniteltu |
+| Myöhemmin | SQLite ja graafiset raportit | Idea |
+
+Aiempien suunnitelmien versionumerointi voi tarkentua työn edetessä. Yllä oleva taulukko erottaa vahvistetut toteutukset suunnitelmista.
+
+## Teknologiat
+
+- **Ohjelmointikieli:** Python 3
+- **Käyttöliittymä:** komentorivi (CLI)
+- **Kehitysympäristö:** Fedora Linux KDE
+- **Lähdekoodi:** `study_manager.py`
+- **Versionhallinta:** Git ja GitHub
+- **Tietojen säilytys:** ohjelman suoritusmuisti (ei vielä tiedostotallennusta)
+
+## Versionhallinnan tilanne 10.11.2026
+
+Paikallisesti vahvistettu commit:
+
+```text
+cdd8c4d feat: add fixed and flexible study hours tracking
+```
+
+GitHubiin julkaisemista ei ole vielä vahvistettu. Kaksi harjoitustiedostoa, `while_harjoitus.py` ja `while_opiskelutunnit.py`, olivat viimeisessä tarkistuksessa versionhallinnan ulkopuolella.
+
+## Dokumentaation kielet
+
+Tämä README on suomeksi. Englanninkielinen kuvaus on tiedostossa [README_EN.md](README_EN.md); sen sisältö on päivitettävä vastaamaan uusimpia ominaisuuksia.
