@@ -27,7 +27,6 @@ else:
 
 total_hours = 0
 
-
 for day in range(1, 8):
     daily_hours = int(input(f"Kuinka monta tuntia opiskelit päivässä {day}? "))
 
@@ -36,3 +35,7 @@ for day in range(1, 8):
     total_hours += daily_hours
 
 print(f"Viikon opiskelutunnit yhteensä: {total_hours} tuntia  ")
+
+average_hours = total_hours / 7
+
+print(f"Päivittäinen keskiarvo: {average_hours} tuntia")
