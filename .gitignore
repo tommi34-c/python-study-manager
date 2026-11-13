@@ -1,3 +1,7 @@
 __pycache__/
 *.pyc
 .venv/
+
+# Paikalliset Python while -harjoitukset
+/while_harjoitus.py
+/while_opiskelutunnit.py

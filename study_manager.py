@@ -26,7 +26,7 @@ else:
     print("Jatka harjoittelua!")
 
 total_hours = 0
- 
+
 choice = input("Valintasi (1/2): ")
 
 if choice  ==  "1":
